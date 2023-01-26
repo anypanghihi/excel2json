@@ -783,7 +783,7 @@ function compileArrayObjectTable( sheet, row, keyIndex )
 				subkey = subkey.substr( 0, subkey.length - 2 );
 				obj[ subkey ] = readCSVLine( sheet[row][valCol] );
 				if( obj[subkey].length > 0 ) {
-					isSane = true;
+					//isSane = true;
 				}
 			} else {
 				obj[ subkey ] = getPrettyValue(sheet[row][valCol]);
@@ -814,7 +814,7 @@ function compileObjectArrayTable( sheet, row, keyIndex )
 		var obj = [];
 		var r = row;
 		var v;
-		while( sheet[r] instanceof Array && (v=String(sheet[r][valCol])) != "") {
+		while( sheet[r] instanceof Array && (v=String(sheet[r][valCol])) != 0) {
 			if( isArray ) {
 				subkey = subkey.substr( 0, subkey.length - 2 );
 				obj.push( readCSVLine( v ) );
